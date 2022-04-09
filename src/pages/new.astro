@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import MeetupEdit from "../components/MeetupEdit.svelte";
+---
+
+<Base>
+  <div class="mx-auto my-12 max-w-5xl px-2">
+    <MeetupEdit
+      mates={[]}
+      meetup={{
+        title: "New Untitled Meetup",
+        description: "Your description",
+        from: Date.now() / 1000,
+        // one hour
+        to: Date.now() / 1000 + 60 * 60,
+      }}
+      client:load
+    />
+  </div>
+</Base>

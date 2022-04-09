@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-full border border-text px-5 py-2;
+  }
+  .button {
+    @apply mx-3 my-4 inline-block border border-text px-7 py-3 hover:bg-text hover:text-background;
+  }
+  .link {
+    @apply underline underline-offset-2;
+  }
+}
+
+/* Playfair Display */
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf);
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/Playfair_Display/PlayfairDisplay-BoldItalic.ttf);
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf);
+}
+
+/* PT Sans */
+@font-face {
+  font-family: "PTSans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/PT_Sans/PTSans-Italic.ttf);
+}
+@font-face {
+  font-family: "PTSans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/PT_Sans/PTSans-BoldItalic.ttf);
+}
+@font-face {
+  font-family: "PTSans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/PT_Sans/PTSans-Regular.ttf);
+}
+@font-face {
+  font-family: "PTSans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/PT_Sans/PTSans-Bold.ttf);
+}
