@@ -24,7 +24,7 @@ const url = Astro.canonicalURL.toString();
   seo={{
     title: `${meetup.title} | Meetup.day`,
     description: "Plan your next meeting.",
-    imgUrl: "/assets/default.jpg",
+    imgUrl: `/img/${Astro.params.data}`,
     url: url,
   }}
 >
