@@ -3,7 +3,7 @@
   import { clickOutside } from "./clickOutside";
   import { timezones } from "./timezones";
   import { createEventDispatcher } from "svelte";
-  import * as moment from "moment-timezone";
+  import moment from "moment-timezone";
 
   const dispatch = createEventDispatcher();
   const openEdit = () => {

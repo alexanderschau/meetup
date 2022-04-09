@@ -1,20 +1,27 @@
 ---
+import { decode } from "js-base64";
+
 import Base from "../layouts/Base.astro";
 import MeetupEdit from "../components/MeetupEdit.svelte";
+
+let meetup: MeetupType;
+try {
+  meetup = JSON.parse(decode(new URL(Astro.request.url).searchParams.get("d")));
+} catch {
+  meetup = {
+    title: "New Untitled Meetup",
+    description: "Your description",
+    from: Date.now() / 1000,
+    // one hour
+    to: Date.now() / 1000 + 60 * 60,
+  };
+}
+
+const mates = [{ tz: "Europe/Berlin" }, { tz: "America/New_York" }];
 ---
 
 <Base>
   <div class="mx-auto my-12 max-w-5xl px-2">
-    <MeetupEdit
-      mates={[]}
-      meetup={{
-        title: "New Untitled Meetup",
-        description: "Your description",
-        from: Date.now() / 1000,
-        // one hour
-        to: Date.now() / 1000 + 60 * 60,
-      }}
-      client:load
-    />
+    <MeetupEdit {mates} {meetup} client:load />
   </div>
 </Base>
