@@ -155,7 +155,7 @@
   <a
     target="_blank"
     class="button"
-    href={`/view?d=${encode(JSON.stringify(meetup))}`}
+    href={`/view/${encode(JSON.stringify(meetup))}`}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

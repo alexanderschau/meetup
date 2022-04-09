@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
+import nodejs from "@astrojs/node";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -14,4 +15,5 @@ export default defineConfig({
     }),
     svelte(),
   ],
+  adapter: nodejs(),
 });

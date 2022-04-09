@@ -1,0 +1,67 @@
+---
+import Base from "../../layouts/Base.astro";
+import { decode, encode } from "js-base64";
+import MeetupSection from "../../components/MeetupSection.svelte";
+import { googleCalendar } from "../../components/actions";
+import IfConditionUrl from "../../components/view/IfConditionUrl.svelte";
+import UserTimezone from "../../components/view/UserTimezone.svelte";
+import LocalTime from "../../components/view/LocalTime.svelte";
+
+let meetup: MeetupType;
+try {
+  meetup = JSON.parse(decode(Astro.params.data));
+} catch {
+  return new Response(null, {
+    status: 404,
+    statusText: "Not found",
+  });
+}
+---
+
+<Base>
+  <div class="mx-auto my-12 max-w-5xl px-2">
+    <div class="my-16">
+      <div class="mb-2 font-PlayfairDisplay text-3xl">
+        {meetup.title}
+      </div>
+      <div class="text-primary">{meetup.description}</div>
+      <IfConditionUrl {meetup} />
+      <hr class="my-8 max-w-md border-text border-opacity-50" />
+    </div>
+    <MeetupSection title="When?">
+      <div class="-mt-4 mb-4 text-sm text-primary">
+        (<UserTimezone client:load />)
+      </div>
+      <div class="text-lg">
+        {new Date(meetup.from * 1000).toDateString()},<br />
+        <LocalTime timestamp={meetup.from} client:load /> - <LocalTime
+          timestamp={meetup.to}
+          client:load
+        />
+      </div>
+    </MeetupSection>
+    <div class="my-12">
+      <a
+        rel="external"
+        target="_blank"
+        class="button"
+        href={googleCalendar(meetup)}
+      >
+        <img
+          class="mr-3 inline-block h-4 align-middle"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg"
+          alt="google-calendar"
+        />
+        Add to Google Calendar
+      </a>
+      <a class="button" href={`/ics/${encode(JSON.stringify(meetup))}`}>
+        <img
+          class="mr-3 inline-block h-4 align-middle"
+          src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"
+          alt="outlook"
+        />
+        Add to Outlook / iCal
+      </a>
+    </div>
+  </div>
+</Base>
