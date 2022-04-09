@@ -1,11 +1,3 @@
-type MemberType = { name: string; timezone: string };
-type MeetingType = {
-  title: string;
-  from: number;
-  to: number;
-  members: MemberType[];
-};
-
 type MeetupType = {
   title: string;
   description?: string;
@@ -15,4 +7,11 @@ type MeetupType = {
 };
 type MeetupMateType = {
   tz: string;
+};
+
+type SEODataType = {
+  title: string;
+  description: string;
+  imgUrl: string;
+  url: string;
 };

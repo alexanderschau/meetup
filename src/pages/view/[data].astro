@@ -16,9 +16,18 @@ try {
     statusText: "Not found",
   });
 }
+
+const url = Astro.canonicalURL.toString();
 ---
 
-<Base>
+<Base
+  seo={{
+    title: `${meetup.title} | Meetup.day`,
+    description: "Plan your next meeting.",
+    imgUrl: "/assets/default.jpg",
+    url: url,
+  }}
+>
   <div class="mx-auto my-12 max-w-5xl px-2">
     <div class="my-16">
       <div class="mb-2 font-PlayfairDisplay text-3xl">

@@ -1,12 +1,14 @@
 ---
 import "../app.css";
+import SEO from "../components/seo.svelte";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
+    <link rel="icon" href="/favicon.svg" />
+    <SEO data={Astro.props.seo} />
   </head>
   <body>
     <div

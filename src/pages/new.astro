@@ -3,6 +3,7 @@ import { decode } from "js-base64";
 
 import Base from "../layouts/Base.astro";
 import MeetupEdit from "../components/MeetupEdit.svelte";
+import SEO from "../components/seo.svelte";
 
 let meetup: MeetupType;
 try {
@@ -18,9 +19,17 @@ try {
 }
 
 const mates = [{ tz: "Europe/Berlin" }, { tz: "America/New_York" }];
+const url = Astro.canonicalURL.toString();
 ---
 
-<Base>
+<Base
+  seo={{
+    title: `${meetup.title} | Meetup.day`,
+    description: "Plan your next meeting.",
+    imgUrl: "/assets/default.jpg",
+    url: url,
+  }}
+>
   <div class="mx-auto my-12 max-w-5xl px-2">
     <MeetupEdit {mates} {meetup} client:load />
   </div>
