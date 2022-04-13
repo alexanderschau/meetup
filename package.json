@@ -13,7 +13,7 @@
     "@astrojs/node": "^0.1.1",
     "@astrojs/svelte": "^0.1.1",
     "@astrojs/tailwind": "^0.1.0",
-    "astro": "^1.0.0-beta.5",
+    "astro": "^1.0.0-beta.9",
     "fuse.js": "^6.5.3",
     "ics": "^2.35.0",
     "js-base64": "^3.7.2",
