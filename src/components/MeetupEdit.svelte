@@ -175,7 +175,7 @@
   <a
     on:click={(e) => {
       e.preventDefault();
-      copy(`https://meetup.day/view?d=${encode(JSON.stringify(meetup))}`);
+      copy(`https://meetup.day/view/${encode(JSON.stringify(meetup))}`);
     }}
     target="_blank"
     class="button"
