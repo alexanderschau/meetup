@@ -73,7 +73,7 @@
     <div class="mb-2 font-PlayfairDisplay text-3xl">
       {meetup.title}
     </div>
-    <div class="text-primary">{meetup.description}</div>
+    <div class="text-primary max-w-md">{meetup.description}</div>
     {#if meetup.url}
       <div class="my-3">
         <svg

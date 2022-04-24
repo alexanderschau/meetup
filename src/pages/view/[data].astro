@@ -33,7 +33,7 @@ const url = Astro.canonicalURL.toString();
       <div class="mb-2 font-PlayfairDisplay text-3xl">
         {meetup.title}
       </div>
-      <div class="text-primary">{meetup.description}</div>
+      <div class="text-primary max-w-md">{meetup.description}</div>
       <IfConditionUrl {meetup} />
       <hr class="my-8 max-w-md border-text border-opacity-50" />
     </div>
@@ -63,7 +63,10 @@ const url = Astro.canonicalURL.toString();
         />
         Add to Google Calendar
       </a>
-      <a class="button" href={`/ics/${encode(JSON.stringify(meetup))}`}>
+      <a
+        class="button"
+        href={`/ics/${encode(JSON.stringify(meetup))}/event.ics`}
+      >
         <img
           class="mr-3 inline-block h-4 align-middle"
           src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"
