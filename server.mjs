@@ -11,6 +11,7 @@ http
     try {
       const data = await fs.promises.readFile(local);
       res.writeHead(200, {
+        "Cache-Control": "max-age=120",
         "Content-Type": mime.getType(req.url),
       });
       res.end(data);
