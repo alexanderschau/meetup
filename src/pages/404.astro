@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+
+const url = Astro.canonicalURL.toString();
+---
+
+<Base
+  seo={{
+    title: `404 - Page not found | Meetup.day`,
+    description: "Plan your next meeting.",
+    imgUrl: "/assets/default.jpg",
+    url: url,
+  }}
+>
+  <div class="px-2 text-center font-PlayfairDisplay text-4xl">
+    404 - Page not found<br /><span class="font-PTSans text-base text-primary"
+      >Don't give up. A brand new meetup might be right around the next corner.
+    </span>
+    <a
+      href="/new"
+      class="button mx-auto mt-14 block max-w-sm font-PTSans text-base"
+      >Plan your next Meetup</a
+    >
+  </div>
+</Base>

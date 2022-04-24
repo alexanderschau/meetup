@@ -24,8 +24,14 @@ http
         } else {
           // Serve your static assets here maybe?
           // 404?
+          const errReq = req;
+          req.url = "/404";
           res.writeHead(404);
-          res.end();
+          ssrHandler(errReq, res, (err) => {
+            res.end();
+          });
+          /*res.writeHead(404);
+          res.end();*/
         }
       });
     }
