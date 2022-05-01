@@ -1,5 +1,6 @@
 # Meetup.day
 
+![thumbnail](./public/assets/default.jpg)
 A free and open source tool to plan your next Meetup through time zones.
 
 ## Features
