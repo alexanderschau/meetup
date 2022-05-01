@@ -1,5 +1,6 @@
 import { decode } from "js-base64";
 import moment from "moment-timezone";
+import fetch from "node-fetch"
 
 export async function get({ data }) {
   let meetup: MeetupType;
