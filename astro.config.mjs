@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import nodejs from "@astrojs/node";
+import netlify from "@astrojs/netlify/functions";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -15,5 +16,5 @@ export default defineConfig({
     }),
     svelte(),
   ],
-  adapter: nodejs(),
+  adapter: netlify(),
 });

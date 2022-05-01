@@ -60,6 +60,13 @@
     unist-util-map "^3.0.1"
     unist-util-visit "^4.1.0"
 
+"@astrojs/netlify@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-0.3.3.tgz#4d3e3c1ccbab26f47b54b9e3530ca6421ffd2c6e"
+  integrity sha512-x/aJZeyUxVbtWHfXYOdhkgPWFuQ/kQgIcNG1hvqEksbRszFZ+88xRXMRIw2W6G/4DInnilGFPVpBoiDOZFkm/w==
+  dependencies:
+    "@astrojs/webapi" "^0.11.1"
+
 "@astrojs/node@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@astrojs/node/-/node-0.1.1.tgz#40020cf2732c7ebdc77eda60453e0ecbe1f17378"
