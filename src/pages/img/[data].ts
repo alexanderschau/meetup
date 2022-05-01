@@ -14,7 +14,7 @@ export async function get({ data }) {
 
   const resp = await fetch(
     `https://img.alexander.sbs/v1/image?tkn=${
-      import.meta.env.IMAGE_API_KEY
+      process.env.IMAGE_API_KEY
     }&url=https://meetup.day/og&h=1000&w=1500&title=${encodeURIComponent(
       meetup.title || "404 - Page not found"
     )}&date=${encodeURIComponent(
