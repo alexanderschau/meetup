@@ -29,6 +29,6 @@
 <meta property="twitter:url" content={data.url} />
 <meta property="twitter:title" content={data.title} />
 <meta property="twitter:description" content={data.description} />
-<meta property="twitter:image" content={data.imgUrl} />
+<meta property="twitter:image:src" content={data.imgUrl} />
 <meta property="twitter:site" content="@meetup_day" />
 <meta property="twitter:creator" content="@alexanderschau" />
