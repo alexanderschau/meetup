@@ -6,6 +6,7 @@ import { googleCalendar } from "../../components/actions";
 import IfConditionUrl from "../../components/view/IfConditionUrl.svelte";
 import UserTimezone from "../../components/view/UserTimezone.svelte";
 import LocalTime from "../../components/view/LocalTime.svelte";
+import {getImageUrl} from "../../components/genImageUrls"
 
 let meetup: MeetupType;
 try {
@@ -18,13 +19,14 @@ try {
 }
 
 const url = Astro.canonicalURL.toString();
+const imageUrl = getImageUrl(meetup)
 ---
 
 <Base
   seo={{
     title: `${meetup.title} | Meetup.day`,
     description: "Plan your next meeting.",
-    imgUrl: `/img/${Astro.params.data}`,
+    imgUrl: imageUrl,
     url: url,
   }}
 >
