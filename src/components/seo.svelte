@@ -1,5 +1,6 @@
 <script lang="ts">
   export let data: SEODataType;
+  data.imgUrl = new URL(data.imgUrl, "https://meetup.day").toString();
 </script>
 
 <title>{data.title}</title>
@@ -21,10 +22,7 @@
 <meta property="og:url" content={data.url} />
 <meta property="og:title" content={data.title} />
 <meta property="og:description" content={data.description} />
-<meta
-  property="og:image"
-  content={new URL(data.imgUrl, "https://meetup.day").toString()}
-/>
+<meta property="og:image" content={data.imgUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
