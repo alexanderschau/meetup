@@ -6,7 +6,7 @@ import { googleCalendar } from "../../components/actions";
 import IfConditionUrl from "../../components/view/IfConditionUrl.svelte";
 import UserTimezone from "../../components/view/UserTimezone.svelte";
 import LocalTime from "../../components/view/LocalTime.svelte";
-import {getImageUrl} from "../../components/genImageUrls"
+import { getImageUrl } from "../../components/genImageUrls";
 
 let meetup: MeetupType;
 try {
@@ -19,7 +19,7 @@ try {
 }
 
 const url = Astro.canonicalURL.toString();
-const imageUrl = getImageUrl(meetup)
+const imageUrl = getImageUrl(meetup);
 ---
 
 <Base
@@ -43,12 +43,28 @@ const imageUrl = getImageUrl(meetup)
       <div class="-mt-4 mb-4 text-sm text-primary">
         (<UserTimezone client:load />)
       </div>
-      <div class="text-lg">
-        {new Date(meetup.from * 1000).toDateString()},<br />
+      <div class="text-lg flex">
+        {(new Date(meetup.from*1000).toDateString() == new Date(meetup.to*1000).toDateString())
+      ?(<div>
+      {new Date(meetup.from * 1000).toDateString()},<br />
         <LocalTime timestamp={meetup.from} client:load /> - <LocalTime
           timestamp={meetup.to}
           client:load
         />
+      </div>)
+      :(<>
+      <div class="my-3">
+      <span class="text-sm text-primary">from:</span><br/>
+      {new Date(meetup.from * 1000).toDateString()},<br/><LocalTime timestamp={meetup.from} client:load /> - <br />
+      </div>
+      <div class="my-3 pl-8">
+      <span class="text-sm text-primary">to:</span><br/>
+      {new Date(meetup.to * 1000).toDateString()},<br/><LocalTime
+          timestamp={meetup.to}
+          client:load
+        />
+        </div>
+      </>)}
       </div>
     </MeetupSection>
     <div class="my-12">

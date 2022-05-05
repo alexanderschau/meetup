@@ -27,6 +27,8 @@
   let inputDate = moment(meetup.from * 1000)
     .tz(myTimeZone)
     .format("YYYY-MM-DD");
+  let inputEndDate = inputDate;
+  let customEndDate = false;
   let inputFrom = moment(meetup.from * 1000)
     .tz(myTimeZone)
     .format("HH:mm");
@@ -36,7 +38,12 @@
 
   $: {
     meetup.from = moment.tz(inputDate + " " + inputFrom, myTimeZone).unix();
-    meetup.to = moment.tz(inputDate + " " + inputTo, myTimeZone).unix();
+    meetup.to = moment
+      .tz(
+        (customEndDate ? inputEndDate : inputDate) + " " + inputTo,
+        myTimeZone
+      )
+      .unix();
   }
 
   const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -118,6 +125,16 @@
     <div class="mx-5">
       <label class="block text-primary">Select a date</label>
       <input bind:value={inputDate} class="input" type="date" />
+    </div>
+    {#if customEndDate}
+      <div class="mx-5">
+        <label class="block text-primary">Select a end date</label>
+        <input bind:value={inputEndDate} class="input" type="date" />
+      </div>
+    {/if}
+    <div class="mx-5 mt-2 mb-3">
+      <input id="custom-end" type="checkbox" bind:checked={customEndDate} />
+      <label for="custom-end" class="text-primary">Use a custom End Date</label>
     </div>
     <div class="flex">
       <div class="mx-5 flex-1">

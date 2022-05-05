@@ -35,10 +35,10 @@
     vscode-languageserver-types "^3.16.0"
     vscode-uri "^3.0.2"
 
-"@astrojs/markdown-remark@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-0.9.3.tgz#76279adc753e654ba1e61b2687713f919d624155"
-  integrity sha512-9dISzYvJE58HvXEMidxFsYn2nTItJ0+gJteJP5styp9947n56WsDdwVMqEl1yZ8b3Mazu0fUJ7ODTFy7s/o4fg==
+"@astrojs/markdown-remark@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-0.9.4.tgz#f43f1dec7b779640eba797881d14d64efaeaf26b"
+  integrity sha512-i1VrZjHpZY8rqEnBurzA9/vHrqQAGE+xkkwrV9a+1ayJyJTeO6wOtOOrjAWkUj8qHYpz+gVL4dK+xPAUymCqOA==
   dependencies:
     "@astrojs/prism" "^0.4.1"
     assert "^2.0.0"
@@ -115,10 +115,10 @@
     postcss "^8.4.12"
     tailwindcss "^3.0.24"
 
-"@astrojs/telemetry@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-0.1.0.tgz#903e50becfc633712a810b714d7d15c4f3fa2e49"
-  integrity sha512-zHKq4uIGH60CpVyrGmOdtKtBATcarvFT3QZVo57x914j0G3hYw3PsKbMkYEoev6uPRPKZHcfYAyPft4Ptr6jdA==
+"@astrojs/telemetry@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-0.1.1.tgz#7356c66445c9ec0fe0adf70584bc0efd4225c933"
+  integrity sha512-T5FqG+5Sp8+ggGd1PHPlO7Nr9cMFu+ralIR8gup8M+kpbvnrQ59I85TcZ6UlewYozgE6naAqXz1N/ngqC1GLdQ==
   dependencies:
     ci-info "^3.3.0"
     debug "^4.3.4"
@@ -694,16 +694,16 @@ ast-types@0.14.2, ast-types@^0.14.2:
   dependencies:
     tslib "^2.0.1"
 
-astro@^1.0.0-beta.21:
-  version "1.0.0-beta.21"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.0-beta.21.tgz#2aaa1e4bf643b11bef89facdf0a7b033c827073e"
-  integrity sha512-qICnXOlDw7mb7yYqJ7C5e+XEuy0SGslfS5U3bRFmgi6jQBWf5iGn4SNeeRGPUJt5ddpS4oQ4t//lKmfuSyE7RA==
+astro@^1.0.0-beta.24:
+  version "1.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.0.0-beta.24.tgz#8786855daa79ae21e258c41b3d1cb2c3b1274029"
+  integrity sha512-w3VOO+bEf4cm2m33gyiuCxjksiNnnbSCw1yKfpJSyFy5V2dXxnJhifTofq5r/Y+cLupwydLznMJx45ius8qXzA==
   dependencies:
     "@astrojs/compiler" "^0.14.2"
     "@astrojs/language-server" "^0.13.4"
-    "@astrojs/markdown-remark" "^0.9.3"
+    "@astrojs/markdown-remark" "^0.9.4"
     "@astrojs/prism" "0.4.1"
-    "@astrojs/telemetry" "^0.1.0"
+    "@astrojs/telemetry" "^0.1.1"
     "@astrojs/webapi" "^0.11.1"
     "@babel/core" "^7.17.9"
     "@babel/generator" "^7.17.9"
@@ -716,6 +716,7 @@ astro@^1.0.0-beta.21:
     ci-info "^3.3.0"
     common-ancestor-path "^1.0.1"
     debug "^4.3.4"
+    devalue "^2.0.1"
     diff "^5.0.0"
     eol "^0.9.1"
     es-module-lexer "^0.10.5"
@@ -744,9 +745,7 @@ astro@^1.0.0-beta.21:
     resolve "^1.22.0"
     rollup "^2.70.2"
     semver "^7.3.7"
-    serialize-javascript "^6.0.0"
     shiki "^0.10.1"
-    shorthash "^0.0.2"
     sirv "^2.0.2"
     slash "^4.0.0"
     sourcemap-codec "^1.4.8"
@@ -1154,6 +1153,11 @@ detective@^5.2.0:
     acorn-node "^1.6.1"
     defined "^1.0.0"
     minimist "^1.1.1"
+
+devalue@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/devalue/-/devalue-2.0.1.tgz#5d368f9adc0928e47b77eea53ca60d2f346f9762"
+  integrity sha512-I2TiqT5iWBEyB8GRfTDP0hiLZ0YeDJZ+upDxjBfOC2lebO5LezQMv7QvIUTzdb64jQyAKLf1AHADtGN+jw6v8Q==
 
 didyoumean@^1.2.2:
   version "1.2.2"
@@ -3541,13 +3545,6 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-randombytes@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
-  integrity sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==
-  dependencies:
-    safe-buffer "^5.1.0"
-
 read-pkg-up@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.1.tgz#f3a6135758459733ae2b95638056e1854e7ef507"
@@ -3770,7 +3767,7 @@ sade@^1.7.3:
   dependencies:
     mri "^1.1.0"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
+safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
@@ -3823,13 +3820,6 @@ semver@^7.3.7:
   dependencies:
     lru-cache "^6.0.0"
 
-serialize-javascript@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-6.0.0.tgz#efae5d88f45d7924141da8b5c3a7a7e663fefeb8"
-  integrity sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag==
-  dependencies:
-    randombytes "^2.1.0"
-
 shebang-command@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
@@ -3850,11 +3840,6 @@ shiki@^0.10.1:
     jsonc-parser "^3.0.0"
     vscode-oniguruma "^1.6.1"
     vscode-textmate "5.2.0"
-
-shorthash@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/shorthash/-/shorthash-0.0.2.tgz#59b268eecbde59038b30da202bcfbddeb2c4a4eb"
-  integrity sha1-WbJo7sveWQOLMNogK8+93rLEpOs=
 
 side-channel@^1.0.4:
   version "1.0.4"

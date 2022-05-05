@@ -1,8 +1,7 @@
 import moment from "moment-timezone";
 import jwt from "jsonwebtoken";
 
-export const getImageUrl=(meetup:MeetupType):string=>{
-
+export const getImageUrl = (meetup: MeetupType): string => {
   const token = jwt.sign(
     {
       token_id: "1",
@@ -23,6 +22,5 @@ export const getImageUrl=(meetup:MeetupType):string=>{
     process.env.IMAGE_API_KEY || import.meta.env.IMAGE_API_KEY
   );
 
-  return `https://img.alexander.sbs/v1/image?t=${token}`
-
-}
+  return `https://img.alexander.sbs/v1/image?t=${token}`;
+};
