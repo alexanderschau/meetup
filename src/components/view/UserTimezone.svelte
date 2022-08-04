@@ -1,0 +1,1 @@
+{Intl.DateTimeFormat().resolvedOptions().timeZone}

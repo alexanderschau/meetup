@@ -1,0 +1,84 @@
+---
+import Base from "../layouts/Base.astro";
+
+const url = Astro.url.toString();
+---
+
+<Base
+  seo={{
+    title: `Open Graph Image Template | Meetup.day`,
+    description: "Plan your next meeting.",
+    imgUrl: "/assets/default.jpg",
+    url: url,
+  }}
+>
+  <div
+    class="absolute top-0 left-0 h-full w-full overflow-hidden bg-background"
+  >
+    <svg
+      class="absolute -bottom-28 -right-12"
+      height="1000"
+      viewBox="0 0 679 696"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="404.5"
+        y="2.5"
+        width="272"
+        height="272"
+        fill="#C2B280"
+        stroke="#281F15"
+        stroke-width="5"></rect>
+      <rect
+        x="86.5"
+        y="110.5"
+        width="583"
+        height="583"
+        rx="291.5"
+        fill="#F6F5F4"
+        stroke="#281F15"
+        stroke-width="5"></rect>
+      <rect
+        x="2.5"
+        y="129.5"
+        width="270"
+        height="270"
+        fill="#F6F5F4"
+        stroke="#281F15"
+        stroke-width="5"></rect>
+      <mask id="path-4-inside-1_13_13" fill="white">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M273.799 127C162.861 169.058 84 276.32 84 402H275V127L273.799 127Z"
+        ></path>
+      </mask>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M273.799 127C162.861 169.058 84 276.32 84 402H275V127L273.799 127Z"
+        fill="#AA8362"></path>
+      <path
+        d="M84 402H79V407H84V402ZM273.799 127V122H272.883L272.027 122.325L273.799 127ZM275 402V407H280V402H275ZM275 127H280V122H275V127ZM89 402C89 278.465 166.512 173.021 275.572 131.675L272.027 122.325C159.21 165.095 79 274.174 79 402H89ZM275 397H84V407H275V397ZM270 127V402H280V127H270ZM273.799 132H275V122H273.799V132Z"
+        fill="#281F15"
+        mask="url(#path-4-inside-1_13_13)"></path>
+      <rect
+        x="404.5"
+        y="2.5"
+        width="272"
+        height="272"
+        stroke="#281F15"
+        stroke-width="5"></rect>
+    </svg>
+
+    <div
+      class="absolute top-0 left-0 flex h-full w-full flex-col justify-center bg-background bg-opacity-95"
+    >
+      <div class="ml-16 text-left font-PlayfairDisplay text-8xl font-bold">
+        {"{{title}}"}
+      </div>
+      <div class="ml-16 mt-6 text-5xl text-primary">{"{{date}}"}</div>
+    </div>
+  </div>
+</Base>

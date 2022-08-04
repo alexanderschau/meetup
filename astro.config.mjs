@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 
@@ -7,5 +7,6 @@ import deno from "@astrojs/deno";
 // https://astro.build/config
 export default defineConfig({
   integrations: [svelte(), tailwind()],
-  adapter: deno()
+  output: "server",
+  adapter: deno(),
 });

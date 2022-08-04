@@ -1,13 +1,27 @@
 ---
+import Base from "../layouts/Base.astro";
+
+const url = Astro.url.toString();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  seo={{
+    title: `Home | Meetup.day`,
+    description: "Plan your next meeting.",
+    imgUrl: "/assets/default.jpg",
+    url: url,
+  }}
+>
+  <div
+    class="absolute top-0 left-0 h-full w-full bg-background flex"
+    style="background-image: url(/bg-pattern.svg);"
+  >
+    <div class="mx-2 my-auto">
+      <div class="font-PlayfairDisplay text-6xl font-bold ml-8 max-w-2xl my-8">
+        Plan your next meeting
+        <span class="text-primary font-normal italic">in just seconds</span>
+      </div>
+      <a href="/new" class="button ml-8">Give it a try!</a>
+    </div>
+  </div>
+</Base>
