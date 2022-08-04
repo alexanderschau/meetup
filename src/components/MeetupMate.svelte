@@ -31,6 +31,8 @@
     .tz(mate.tz)
     .format("HH:mm")
     .split(":");
+
+  let removeConfirm = false;
 </script>
 
 <div class="my-6 flex px-3">
@@ -61,10 +63,17 @@
     <a
       on:click={(e) => {
         e.preventDefault();
-        removeMate();
+        if (!removeConfirm) {
+          removeConfirm = true;
+        } else {
+          removeMate();
+          removeConfirm = false;
+        }
       }}
       href="/"
-      class="link my-2 block max-w-sm text-right">Remove mate</a
+      class={`link my-2 block max-w-sm text-right ${
+        removeConfirm ? "text-red-600" : ""
+      }`}>{removeConfirm ? "Confirm deletion" : "Remove mate"}</a
     >
   </div>
 {/if}

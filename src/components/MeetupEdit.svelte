@@ -164,6 +164,9 @@
       edit={currMate == i}
     />
   {/each}
+  {#if mates.length == 0}
+    <i>There is no mate yet</i>
+  {/if}
   <a
     on:click={(e) => {
       e.preventDefault();
