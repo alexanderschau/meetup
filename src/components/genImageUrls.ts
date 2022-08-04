@@ -1,7 +1,7 @@
 import moment from "moment-timezone";
 
 export const getImageUrl = (meetup: MeetupType): string => {
-  return `https://img.alexander.sbs/v1/image?tkn=${
+  return `https://img.alexanderschau.com/v1/img?tkn=${
     import.meta.env.IMAGE_API_KEY
   }&w=1500&h=1000&url=${encodeURIComponent(
     "https://meetup.day/og"
