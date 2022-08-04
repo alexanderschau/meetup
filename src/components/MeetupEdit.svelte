@@ -152,7 +152,7 @@
 </MeetupSection>
 <MeetupSection title="Check timezones">
   {#each mates as mate, i}
-    <!--MeetupMate
+    <MeetupMate
       on:openEdit={() => (currMate = i)}
       on:closeEdit={() => (currMate = -1)}
       on:remove={() => {
@@ -162,7 +162,7 @@
       bind:mate
       {meetup}
       edit={currMate == i}
-    /-->
+    />
   {/each}
   <a
     on:click={(e) => {
