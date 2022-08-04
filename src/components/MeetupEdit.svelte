@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { matesStore } from "./stores";
   import moment from "moment-timezone";
   import { encode } from "js-base64";
   import { copy } from "./copyToClipboard";
@@ -14,10 +15,9 @@
     to: Date.now() / 1000 + 60 * 60,
   };
 
-  export let mates: MeetupMateType[] = [
-    { tz: "Europe/Berlin" },
-    { tz: "America/New_York" },
-  ];
+  let mates: MeetupMateType[];
+  matesStore.subscribe((val) => (mates = val));
+
   let currMate: number = -1;
 
   let editHead = false;
@@ -156,7 +156,7 @@
       on:openEdit={() => (currMate = i)}
       on:closeEdit={() => (currMate = -1)}
       on:remove={() => {
-        mates = mates.filter((m, id) => id !== i);
+        matesStore.set(mates.filter((m, id) => id !== i));
         currMate = -1;
       }}
       bind:mate
@@ -167,7 +167,7 @@
   <a
     on:click={(e) => {
       e.preventDefault();
-      mates = [...mates, { tz: "UTC" }];
+      matesStore.set([...mates, { tz: "UTC" }]);
     }}
     href="/"
     class="link mt-10 block">+ Add a mate</a
