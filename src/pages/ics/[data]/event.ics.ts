@@ -1,6 +1,6 @@
 import { decode } from "js-base64";
 import moment from "moment-timezone";
-/*import ics, { type DateArray } from "ics";*/
+import ics, { type DateArray } from "ics";
 
 export async function get({ data }) {
   let meetup: MeetupType;
@@ -13,7 +13,7 @@ export async function get({ data }) {
     });
   }
 
-  /*const resp = (await new Promise((resolve, reject) => {
+  const resp = (await new Promise((resolve, reject) => {
     ics.createEvent(
       {
         title: meetup.title,
@@ -43,8 +43,7 @@ export async function get({ data }) {
         reject(e);
       }
     );
-  })) as string;*/
-  const resp = "";
+  })) as string;
 
   return new Response(resp, {
     headers: {

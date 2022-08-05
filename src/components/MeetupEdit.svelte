@@ -15,8 +15,10 @@
     to: Date.now() / 1000 + 60 * 60,
   };
 
-  let mates: MeetupMateType[];
-  matesStore.subscribe((val) => (mates = val));
+  let mates: MeetupMateType[] = [];
+  matesStore.subscribe((val) => {
+    mates = val;
+  });
 
   let currMate: number = -1;
 

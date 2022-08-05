@@ -31,6 +31,6 @@ const url = Astro.url.toString();
   }}
 >
   <div class="mx-auto my-12 max-w-5xl px-2">
-    <MeetupEdit {meetup} client:load />
+    <MeetupEdit meetup={meetup} client:load />
   </div>
 </Base>

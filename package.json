@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^0.2.5",
     "astro": "^1.0.0-rc.5",
     "fuse.js": "^6.6.2",
+    "ics": "^2.37.0",
     "isc": "^0.0.4",
     "js-base64": "^3.7.2",
     "moment-timezone": "^0.5.34",

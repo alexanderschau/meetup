@@ -65,6 +65,9 @@
         e.preventDefault();
         if (!removeConfirm) {
           removeConfirm = true;
+          setTimeout(() => {
+            removeConfirm = false;
+          }, 2000);
         } else {
           removeMate();
           removeConfirm = false;
